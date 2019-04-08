@@ -1,6 +1,6 @@
 # GitHub Avatar Downloader
 
-##Problem Statememnt
+## Problem Statememnt
 
 Given a GitHub repository name and owner, download all the contributors' profile images and save them to a subdirectory, `avatars/`.
 

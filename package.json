@@ -1,0 +1,23 @@
+{
+  "name": "git_avatar",
+  "version": "1.0.0",
+  "description": "## Problem Statememnt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliantomlin/git_avatar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juliantomlin/git_avatar/issues"
+  },
+  "homepage": "https://github.com/juliantomlin/git_avatar#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
