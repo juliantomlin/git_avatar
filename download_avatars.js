@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 var owner = process.argv[2]
 var repo = process.argv[3]
 
@@ -15,7 +17,7 @@ function getRepoContributors(repoOwner, repoName, callback) {
     url: 'https://api.github.com/repos/' + repoOwner + '/' + repoName +'/contributors',
     headers: {
       'User-Agent': 'request',
-      'Authorization': token.GITHUB_TOKEN
+      'Authorization': process.env.GITHUB_TOKEN
     }
   }
 

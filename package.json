@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/juliantomlin/git_avatar#readme",
   "dependencies": {
+    "dotenv": "^7.0.0",
     "request": "^2.88.0"
   }
 }
