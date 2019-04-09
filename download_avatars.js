@@ -1,3 +1,6 @@
+var owner = process.argv[2]
+var repo = process.argv[3]
+
 var request = require('request')
 var token = require('./secrets')
 var fs = require('fs')
@@ -22,24 +25,8 @@ function getRepoContributors(repoOwner, repoName, callback) {
         callback(output[user].avatar_url, './avatar_pictures/' + output[user].login)
     }
   })
-
-  // https.get(requestOptions.url, function(response) {
-  //   response.setEncoding('utf8')
-  //   data = ''
-  //   response.on('data', function (chunk) {
-  //     data += chunk
-  //   })
-
-  //   response.on('end', function() {
-  //     callback(data.avatar_url)
-  //   })
-  // })
 }
 
-// getRepoContributors('jquery', 'jquery', function(err, result) {
-//   console.log("Errors: ", err)
-//   console.log("Result: ", result)
-// })
 
 function downloadImageByURL(url, filePath) {
   request.get(url)
@@ -48,5 +35,10 @@ function downloadImageByURL(url, filePath) {
          })
          .pipe(fs.createWriteStream(filePath))
 }
-
-getRepoContributors('jquery', 'jquery', downloadImageByURL)
+if (!repo){
+  console.log ('please include owener and repo name')
+}
+else {
+  getRepoContributors(owner, repo, downloadImageByURL)
+  console.log('download successful')
+}
