@@ -18,7 +18,7 @@ function getRepoContributors(repoOwner, repoName, callback, starred) {
 
 
   var requestOptions = {
-    url: 'https://api.github.com/repos/' + repoOwner + '/' + repoName +'/contributors',
+    url: 'https://api.github.com/repos/' + repoOwner + '/' + repoName +'/contributors?per_page=100',
     headers: {
       'User-Agent': 'request',
       'Authorization': 'BEARER ' + process.env.GITHUB_TOKEN
@@ -48,7 +48,7 @@ function downloadImageByURL(url, filePath) {
 var makeRepoList = function (listOfURL, callback) {
   listOfURL.forEach(function(repo) {
     var listOfUserStars = {
-      url: repo,
+      url: repo +'?per_page=100',
       headers: {
       'User-Agent': 'request',
       'Authorization': 'BEARER ' + process.env.GITHUB_TOKEN
