@@ -1,6 +1,7 @@
 secrets.js
 avatar_pictures
 .env
+download_avatars copy.js
 
 # Logs
 logs
